@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+  <div id="navbar"></div>
+<!-- Slideshow -->
+<style>
+    .slideshow-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.slideshow {
+  width: 800px;
+  height: 600px;
+  background-color:black;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  object-fit: contain;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .nav:hover {
+      background: rgba(0,0,0,0.8);
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+	</style>
+<section class="bg-white mt-10">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <p class="text-xl sm:text-2xl font-medium leading-relaxed text-black text-center">
+      Welcome to the
+      <strong class="text-blue-900 font-bold">
+        Design of Actuators, Robotics and Transducers Laboratory (DART Lab)
+      </strong>
+      in the department of Mechanical, Aerospace, and Industrial Engineering at UT San Antonio.
+    </p>
+</section>
+<div class="slideshow-wrapper self-start">
+  <div class="slideshow">
+  
+    <img src="images/Cropdis.png" class="slide active">
+
+    <button class="nav prev" onclick="changeSlide(-1)">❮</button>
+    <button class="nav next" onclick="changeSlide(1)">❯</button>
+  </div>
+</div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+  let slideTimer;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  function startAutoSlide() {
+    slideTimer = setInterval(() => changeSlide(1), 4000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(slideTimer);
+    startAutoSlide();
+  }
+
+  function changeSlide(direction) {
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    showSlide(currentSlide);
+    resetAutoSlide();
+  }
+
+  showSlide(currentSlide);
+  startAutoSlide();
+</script>
+</div>
+  </section>
+  
+<!--about-->  
+ <section class="bg-white mb-10"> 
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+          About the Lab
+        </h2>
+        <p class="mt-4 text-sm sm:text-base leading-relaxed text-slate-700">
+          The <strong>DART Lab</strong> at <strong>UT San Antonio</strong> main area of research is to develop alternative battery compositions using materials such as silica, hydrogels, and silicon.
+        </p>
+        <p class="mt-3 text-sm sm:text-base leading-relaxed text-slate-700">
+          Our interest span from <strong>Multifuctional Materials</strong> (e.g., Lithium-ion batteries, multi-fibre composites, Liquid crystalline elastomers, hydrogels)
+		  , to <strong>Soft Robotics</strong> (e.g., Smart acutuators, compliant mechanisms, multi-energy harvesters, structural health monitoring)
+		  , and <strong>Design Optimization</strong> (e.g., Genetic algorithms, gradient based algorithms, shape matching, shape optimization).
+        </p>
+      </div>
+    </section>
+
+<!--SnapShot-->
+    <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid gap-10 lg:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight">
+            Design of Actuators, Robotics & Actuators Lab
+          </h1>
+          <p class="mt-3 text-lg text-slate-200">
+            Department of Mechanical, Aerospace, and Industrial Engineering <strong>UT San Antonio</strong>
+          </p>
+          <p class="mt-5 text-sm sm:text-base text-slate-300 leading-relaxed pb-4">
+            We are a research group focused on <strong>development of batteries, with area of interests in energy harvesting and robotics</strong>
+          </p>
+
+          <h3 class="text-3xl sm:text-4xl lg:text-2xl font-semibold tracking-tight pb-4">
+           If you are a student interested in joining our Lab
+          </h3>
+          <ol class="list-disc list-inside space-y-6 text-lg text-slate-300">
+          <li>Graduate Students email <strong>Dr. Cody Gonzalez</strong> your research interests</li>
+          <li>Undergraduates interested in joining the D.A.R.T Lab please email your full name, interests, and Major to <strong>Bryan Leblanc</strong> and cc <strong>Benjamin Gregory</strong></li>
+          </ol>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              href="Research.html"
+              class="inline-flex items-center rounded-full bg-white text-slate-900 px-4 py-2 text-sm font-semibold shadow-sm"
+            >
+              View Research Areas
+            </a>
+            </a>
+          </div>
+        </div>
+        <div class="bg-slate-900/40 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-xl">
+          <h2 class="text-sm font-semibold uppercase tracking-[0.15em] text-slate-400">
+            Lab Snapshot
+          </h2>
+          <dl class="mt-4 grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-2xl bg-slate-800/80 p-4">
+              <dt class="text-slate-400">Principal Investigator</dt>
+              <dd class="mt-1 font-semibold">Dr. Cody Gonzalez</dd>
+            </div>
+            <div class="rounded-2xl bg-slate-800/80 p-4">
+              <dt class="text-slate-400">Location</dt>
+              <dd class="mt-1 font-semibold">Engineering Building · Griffin Thermal Fluids Lab EB 1.04.30 · Main Campus</dd>
+            </div>
+            <div class="rounded-2xl bg-slate-800/80 p-4">
+              <dt class="text-slate-400">Research Focus</dt>
+              <dd class="mt-1 font-semibold">Robotics, Batteries, Energy Harvesting </dd>
+            </div>
+            <div class="rounded-2xl bg-slate-800/80 p-4">
+              <dt class="text-slate-400">Currently Recruiting?</dt>
+              <dd class="mt-1 font-semibold">Yes</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+	</head>
+  
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
+        });
+    }
+
+    loadComponent("navbar", "navbar.html");
+    loadComponent("footer", "footer.html");
+  </script>
+
+</body>
+</html>

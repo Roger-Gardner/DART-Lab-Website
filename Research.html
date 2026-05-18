@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+  <section class="bg-slate-white py-12">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="text-lg text-slate-700 leading-relaxed">
+    <span class="font-semibold text-slate-900">The Design of Actuators, Robotics, and Transducers Laboratory (D.A.R.T. Lab)</span> focuses on the intersection of smart, marathon, multifunctional materials with capabilities for energy storage, 
+    sensing and actuation. Applications include adaptive structures, high reliability and high-capacity energy storage, shape morphing, and soft robotics.
+    </p>
+  </div>
+</section>
+    <!-- Active Projects -->
+    <section class="my-10">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+          Active Research Projects
+        </h2>
+        <p class="mt-3 text-sm sm:text-base text-slate-700">
+          Current projects that are actively researched by members
+        </p>
+      </div>
+
+      <article class="rounded-2xl max-w-xl mx-auto border border-slate-200 bg-slate-50 p-4 shadow-sm mt-6">
+      <ol class="list-decimal list-inside space-y-1 text-sm text-slate-700">
+          <li>Next generation silent, self-powered electrochemical actuators</li>
+          <li>Simulating Stress Potential Coupling in Lithium Ion Batteries using COMSOL</li>
+          <li>Enhanced State of Charge Sensing in Lithium-Alloy Batteries</li>
+          <li>Analytical Modeling of Lithium-Ion Battery Actuators</li>
+          <li>Water-in-Salt Hydrogel Electrolytes for Lithium-Ion Batteries</li>
+          <li>Transformed battery reliability state-of-charge measurement</li>
+          <li>Silica-based batteries for sustainable material use</li>
+          <li>Silicon Anode Li-ion Battery Actuators</li>
+          <li>MARVEL dialysis system</li>
+        </ol>
+      </article>
+
+    </section>
+</main>
+<img src="images/DARTLab-Menu.png" class="max-w-3xl mx-auto">
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
+        });
+    }
+
+    loadComponent("navbar", "navbar.html");
+    loadComponent("footer", "footer.html");
+  </script>
+</body>
+</html>

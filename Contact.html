@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<script src="https://cdn.tailwindcss.com"></script>
+<body>
+  <div id="navbar"></div>
+
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      });
+  </script>
+<!--Contact-->
+<section id="contact" class="py-16 sm:py-20 bg-slate-900 text-slate-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1.5fr)] items-start">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">
+            Contact & Visit
+          </h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-200">
+            For inquiries about research, collaboration, or joining the lab, please get in touch.
+          </p>
+          <dl class="mt-6 space-y-3 text-sm">
+            <div>
+            <dt class="font-semibold text-slate-100">Email</dt>
+            <dd class="text-slate-200">
+            <a href="mailto:your.email@university.edu" class="underline">
+            cody.gonzalez@utsa.edu
+            </a>
+            </dd>
+			<dt class="font-semibold text-slate-100">Office</dt>
+			<dd class="text-slate-200">
+            EB 3.04.08
+			<dt class="font-semibold text-slate-100">Lab</dt>
+			<div>
+            <dd class="text-slate-200">
+            EB 1.04.30 Griffin Thermalfluids Laboratory<br />
+            </div>
+            <div>
+            <dt class="font-semibold text-slate-100">Address</dt>
+            <dd class="text-slate-200">
+            One UTSA Circle, San Antonio, TX 78249.<br />
+            Department of Mechanical, Aerospace, and Industrial Engineering UT San Antonio<br />
+            </dd>
+            </div>
+            <div>
+            </dt>
+            </div>
+          </dl>
+        </div>
